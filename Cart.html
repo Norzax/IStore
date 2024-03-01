@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping_Cart</title>
+        <link rel="shortcut icon" type="image/jpg" href="Images/Icons/LogoIcon.ico">
+        <link rel="stylesheet" href="Style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body style="height: auto" onload="checklogin(), checkcart()">
+        <header>
+            <div id="top">
+                <div class="topnav">
+                    <ul>
+                        <li><span> Shopping advice: 1800 1234</span></li>
+                        <li><span> Customer care: 1800 4321</span></li>
+                        <li><a href="#">Build configurattion</a></li>
+                        <li><a href="#">Technology news</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="bot">
+                <div class="botnav">
+                    <div class="botnavleft">
+                        <a href="Index.html" class="logo">
+                            <img src="Images/Icons/logo.jpg" class="pic">
+                            <span>Istore</span>
+                        </a>
+                    </div>
+                    <div class="botnavright">
+                        <ul>
+                            <li class="homepage"><a href="Index.html">Home</a></li>
+                            <li class="brand"><a href="Index.html?Apple?1">Apple</a></li>
+                            <li class="brand"><a href="Index.html?Dell?1">Dell</a></li>
+                            <li class="brand"><a href="Index.html?Asus?1">Asus</a></li>
+                            <li class="brand"><a href="Index.html?Acer?1">Acer</a></li>
+                            <li class="menures">
+                                <span>&equiv;</span>
+                                <ul class="pd">
+                                    <li><a href="Index.html?Apple?1">Apple</a></li>
+                                    <li><a href="Index.html?Dell?1">Dell</a></li>
+                                    <li><a href="Index.html?Asus?1">Asus</a></li>
+                                    <li><a href="Index.html?Acer?1">Acer</a></li>
+                                </ul>
+                            </li>
+                            <li class="search">
+                                <form action="Index.html">
+                                    <span id="SICON"><i class="fa fa-search" onclick="showSearch()"></i></span>
+                                    <div class="searchbox">
+                                        <input name="searching" type="search" placeholder="Enter keyword" id="SEARCH">
+                                        <button type="submit" id="btn"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="carticon"><i class="fa fa-shopping-cart"></i></li>
+                            <li class="usericon">
+                                <i class="fa fa-user"></i>
+                                <ul>
+                                    <li onclick="showLogin()">Login</li>
+                                    <li onclick="showSignup()">Register</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div id="user">
+            <form id="loginForm" class="modal">
+                <div id = "login" class="animate">
+                    <div>
+                        <img src="Images/Icons/Log_Reglogo.png" class="logolog">
+                        <span class="close" onclick="closeForm()">&times;</span>
+                    </div>
+                    <h1>Login</h1>
+                    <div class="loginposition">
+                        <label for="Log-username">Username</label><br>
+                        <input type="text" placeholder="Enter username" id="Log-username">
+                        <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                        <div id="wusername">Please enter your full name</div>
+                        <label for="Log-password">Password</label><br>
+                        <input type="password" placeholder="Enter password" id="Log-password">
+                        <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                        <div id="wupassword">Enter your password</div>
+                        <p><button class="logbtn">Login</button></p>
+                    </div>
+                    <div class="loginfooter">
+                        <div><a href="#">Lost your password?</a></div>
+                        <div onclick="showSignup()">Don't have an account? Register</div>
+                    </div>
+                </div>
+            </form>
+            <form id="registerForm" class="modal">
+                <div id = "register" class="animate">
+                    <div>
+                        <img src="Images/Icons/Log_reglogo.png" class="logoregis">
+                        <span class="close" onclick="closeForm()">&times;</span>    
+                    </div>
+                    <h1>Register</h1>
+                    <div class="registerposition">
+                        <div class="registerpositionleft">
+                            <label for="Reg-fullname">Fullname</label><br>
+                            <input type="text" placeholder="Enter your fullname" id="Reg-fullname">
+                            <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                            <div id="wname">Enter your fullname</div>
+                            <label for="Reg-number">Phone Number</label><br>
+                            <input type="text" placeholder="Enter phone number" id="Reg-number">
+                            <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                            <div id="wnumber">Enter your phone number</div>
+                            <label for="Reg-address">Address</label><br>
+                            <input type="text" placeholder="Enter address" id="Reg-address">
+                            <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                            <div id="waddress">Enter your address</div>
+                        </div>
+                        <div class="registerpositionright">
+                            <label for="Reg-username">Username</label><br>
+                            <input type="text" placeholder="Enter username" id="Reg-username">
+                            <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                            <div id="wusernamenew">Username mustn't empty</div>
+                            <label for="Reg-password">Password</label><br>
+                            <input type="password" placeholder="Enter password" id="Reg-password">
+                            <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                            <div id="wpassword">Password mustn't empty</div>
+                            <label for="Reg-confirmpassword">Confirm Password</label><br>
+                            <input type="password" placeholder="Enter password again" id="Reg-confirmpassword">
+                            <div style="border-bottom: 2px solid rgb(88, 88, 88); margin: -2px 0 15px 0;"></div>
+                            <div id="wcpassword">Enter password again</div>
+                        </div>
+                        <p><button class="regbtn">Register</button></p>
+                    </div>
+                    <div class="registerfooter">
+                        <div onclick="showLogin()">Already have an account? Login</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <section id="cartinfo" style="display: none;">
+            <h1>You don't have any products</h1>
+        </section>
+
+        <section id="cartList">
+            <div id= cartproduct>
+
+            </div>
+        </section>
+
+        <div id="foot">
+            <div class="footer">
+                <div class="footer_info">
+                    <div class="footer_info_1">
+                        <a href="Index.html"><img src="Images/Icons/logo.jpg" class="logo_footer"></a>
+                        <h3>About Us</h3>
+                        <p class="footerinfo">I Store - Always beside you</p>
+                        <h3>Contact Us</h3>
+                        <p class="footerinfo contactinfo"><i class="fa fa-phone"> +84 987 654 321</i></p>
+                        <p class="footerinfo contactinfo"><i class="fa fa-envelope">  Istore@gmail.com</i></p>
+                        <p class="footerinfo contactinfo"><i class="fa fa-map-marker"> 273 An Dương Vương, P3, Quận 5, TPHCM</i></p>
+                    </div>
+                    <div class="footer_info_2">
+                        <br><br><h3>Information</h3>
+                        <a href="#"><p class="footerinfo">About Us</p></a>
+                        <a href="#"><p class="footerinfo">More Search</p></a>
+                        <a href="#"><p class="footerinfo">Blog</p></a>
+                        <a href="#"><p class="footerinfo">Testtimonials</p></a>
+                    </div>
+                    <div class="footer_info_3">
+                        <br><br><h3>Helpful Links</h3>
+                        <a href="#"><p class="footerinfo">Services</p></a>
+                        <a href="#"><p class="footerinfo">Supports</p></a>
+                        <a href="#"><p class="footerinfo">Terms & Condition</p></a>
+                        <a href="#"><p class="footerinfo">Privacy Policy</p></a>
+                    </div>
+                    <div class="footer_info_4">
+                        <br><br><h3>Subscribe For More Info</h3>
+                        <input type="email" placeholder="Enter your email">
+                        <button class="email">Subscribe</button>
+                    </div>
+                </div>
+                <div style="border-bottom: 2px solid rgb(88, 88, 88); width:95%; margin: auto;"></div>
+                <div class="footersocial">
+                    <img src="Images/Icons/Facebook_icon.png" class="social">
+                    <img src="Images/Icons/Google_icon.png" class="social">
+                    <img src="Images/Icons/Twitter_icon.png" class="social">
+                    <img src="Images/Icons/Instagram_icon.png" class="social">
+                    <p class="Istore">2020 &#169; Copyright Istore. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    <script src="javascripts.js"></script>
+    </body>
+</html>

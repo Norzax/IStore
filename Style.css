@@ -1,0 +1,1294 @@
+/*ALL INDEX*/
+* {
+    margin:0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+/**/
+div#top {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    z-index: 1001;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+div#top .topnav {
+    width:1200px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+div#top .topnav ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
+div#top .topnav ul li {
+    position: relative;
+    list-style-type: none;
+    margin: 0 10px;
+    color: white;
+}
+
+div#top .topnav ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: .6s;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+div#top .topnav ul li span {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: .6s;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+div#bot {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: .6s;
+    padding: 50px 100px 0px 100px;
+    z-index: 1000;
+    background-color: white;
+}
+
+div#bot .botnav {
+    width:1200px;
+    margin: 0 auto;
+}
+
+div#bot .botnav .botnavleft {
+    float: left;
+    margin: 10px auto;
+}
+
+div#bot .botnav .botnavright {
+    float: right;
+    margin: 20px auto;
+}
+
+div#bot.sticky {
+    padding: 5px 100px;
+    background: rgb(0, 0, 0);
+}
+
+div#bot .botnav .botnavleft .logo {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .6s;
+}
+
+div#bot .botnav .botnavleft .logo .pic{
+    width: 100px;
+    height: 50px;
+}
+
+
+div#bot .botnav .botnavright ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#bot .botnav .botnavright ul li {
+    position: relative;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+div#bot .botnav .botnavright ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+    transition: .6s;
+    cursor: pointer;
+}
+
+div#bot .botnav .botnavright ul li a:hover {
+    color: red;
+    transition: .1s;
+    border-bottom: red solid 2px ;
+}
+
+div#bot .botnav .botnavright ul li i {
+    color: black;
+    margin: 0px 20px;
+}
+
+div#bot .botnav .botnavright ul li.menures span:hover,
+div#bot .botnav .botnavright ul li i:hover {
+    color: red;
+    transition: .1s;
+    border-bottom: red solid 2px ;
+}
+
+div#bot.sticky .botnav .botnavright ul li i,
+div#bot.sticky .botnav .botnavleft .logo,
+div#bot.sticky .botnav .botnavright ul li a {
+    color: rgb(255, 255, 255);
+}
+
+div#top .topnav ul li span:hover,
+div#top .topnav ul li a:hover,
+div#bot.sticky .botnav .botnavright ul li i:hover ,
+div#bot.sticky .botnav .botnavright ul li a:hover,
+div#bot .botnav .botnavright ul li.usericon ul li:hover {
+    color: red;
+}
+
+
+div#bot.sticky .botnav .botnavright ul li a.dashbroad {
+    color: #000000;
+}
+
+div#bot .botnav .botnavright ul li.usericon,
+div#bot .botnav .botnavright ul li.carticon {
+    font-size: 25px;
+}
+
+div#bot .botnav .botnavright ul li.usericon ul {
+    display: none;
+    position: absolute;
+    color:rgb(0, 0, 0);
+    padding-top: 35px;
+    margin-left: -65px;
+    text-align: center;
+    width:160px;
+    animation-name: animation;
+    animation-duration: .5s;    
+}
+
+div#bot .botnav .botnavright ul li.usericon ul li {
+    padding: 10px 0px;
+    background-color: white;
+    border: solid 2px;
+}
+
+div#bot .botnav .botnavright ul li.usericon ul li a:hover {
+    border:none;
+}
+
+div#bot .botnav .botnavright ul li.usericon:hover ul {
+    display: block;
+}
+
+div#bot .botnav .botnavright ul li.menures {
+    display: none;
+}
+
+div#bot.sticky .botnav .botnavright ul li.menures {
+    color:white;
+}
+
+div#bot .botnav .botnavright ul li.menures ul.pd {
+    display: none;
+    position: absolute;
+    color:rgb(0, 0, 0);
+    padding-top: 25px;
+    margin-left: -25px;
+    text-align: center;
+    width:400px;
+    font-size: 20px;
+    animation-name: animation;
+    animation-duration: .5s;
+}
+
+div#bot .botnav .botnavright ul li.menures ul.pd li {
+    padding: 10px 0px;
+    background-color: #fff;
+}
+
+div#bot.sticky .botnav .botnavright ul li.menures ul.pd li {
+    background-color: #000000;
+}
+
+div#bot .botnav .botnavright ul li.menures span {
+    font-size: 30px;
+}
+
+/*SEARCH BOX*/
+div#bot .botnav .botnavright ul li.search div.searchbox button[type=submit] {
+    position: absolute;   
+    margin-left: -45px;
+    margin-top: -33px; 
+    outline: none;
+    background-color: rgb(112, 112, 112);
+    height: 40px;
+    width: 40px;
+    display: none;
+}
+
+div#bot .botnav .botnavright ul li div.searchbox button#btn i {
+    margin: 0;
+} 
+
+div#bot .botnav .botnavright ul li div.searchbox button#btn i:hover {
+    color: black;
+    border-bottom:none ;
+}
+
+div#bot .botnav .botnavright ul li.search div.searchbox input[type=search] {
+    position: absolute;
+    width:500px;
+    height: 50px;
+    background-color: rgb(224, 224, 224);
+    margin-left: -500px;
+    margin-top: -38px;
+    display: none;
+    padding:0 15px;
+    outline: none;
+    animation-name: animation;
+    animation-duration: 0.5s;
+}
+
+section#banner {
+    width:100%;
+}
+
+section#banner .bannerinfo {
+    width:100%;
+    margin:30px auto 0 auto;
+}
+
+section#intro {
+    width:1000px;
+    padding: 50px 0 100px 0;
+    margin: 0 auto;
+    display: none;
+}
+
+section#intro div.temp1 {
+    width: 300px;
+    height: 300px;
+    float: left;
+    font-weight: bold;
+}
+
+section#intro div.temp1 .temp11 {
+    padding: 10px 22px ;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    animation-name: animation1;
+    animation-duration: 2.5s;
+}
+
+section#intro div.temp1 .temp12 {
+    padding: 10px 20px ;
+    font-size: 50px;
+    width: 300px;
+    animation-name: animation2;
+    animation-duration: 3s;
+}
+
+section#intro div.temp1 .temp13 {
+    margin-left:20px ;
+    font-size: 50px;
+    border-bottom: 10px red solid;
+    width:30%;
+    animation-name: animation3;
+    animation-duration: 3.5s;
+}
+
+section#intro div.temp2{
+    width: 700px;
+    height: 300px;
+    float: right;
+    background-color: rgb(189, 189, 189)
+}
+
+section#intro div.temp2 .pic {
+    width: 700px;
+    height: 300px;
+}
+
+section#intro div.temp2 .slide {
+    width: 700px;
+    height: 300px;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-name: animation;
+    animation-duration: 3s;
+}
+
+section#laptype{
+    width: 1200px;
+    height: 400px;
+    margin: 300px auto;
+    display: none;
+}
+
+section#laptype .laptypeinfo {
+    position: relative;
+}
+
+section#laptype .laptypeinfo .left {
+    width:350px;
+    height: 400px;
+    float: left;
+    margin: 0 auto;
+    position: relative;
+    animation-name: animation4;
+    animation-duration: 3s;
+    background-color: thistle;
+}
+
+section#laptype .laptypeinfo .left p,
+section#laptype .laptypeinfo .center p,
+section#laptype .laptypeinfo .right p {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    z-index: 3;
+}
+
+section#laptype .laptypeinfo .left:hover ,
+section#laptype .laptypeinfo .center:hover,
+section#laptype .laptypeinfo .right:hover {
+    box-shadow: black 1px 1px 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+section#laptype .laptypeinfo .center {
+    height: 400px;
+    width: 350px;
+    float: left;
+    margin: 0 75px;
+    animation-name: animation5;
+    animation-duration: 3s;
+    background-color: thistle;
+}
+
+section#laptype .laptypeinfo .right {
+    width:350px;
+    height: 400px;
+    float: right;
+    animation-name: animation6;
+    animation-duration: 3s;
+    background-color: thistle;
+}
+
+section#laptype .laptypeinfo img {
+    height: 350px;
+    width: 350px;
+}
+
+@keyframes animation {
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+
+@keyframes animation1 {
+    0%    { margin-left:200px; }
+    100%  { margin-left:0px; }
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+
+@keyframes animation2 {
+    0%    { margin-left:-200px; }
+    100%  { margin-left:0px; }
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+
+@keyframes animation3 {
+    0%    { margin-left:200px; }
+    100%  { margin-left:20px; }
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+
+@keyframes animation4 {
+    0%    { margin-left:-200px; margin-top: -200px;}
+    100%  { margin-left:0px; margin-top:0px;}
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+
+@keyframes animation5 {
+    0%    { margin-left:275px;margin-top: -200px;}
+    100%  { margin-top:0px;}
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+
+@keyframes animation6 {
+    0%    { margin-right:-200px;margin-top: -200px;}
+    100%  { margin-right: 0px;margin-top: 0px;}
+    0%    {opacity:0};
+    100%   {opacity:1};
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+#products .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+#products .items .item {
+    padding:15px;
+}
+
+#products .items .item:hover {
+    box-shadow: rgba(0, 0, 0, 0.521) 0px 0px 10px ;
+    transition: .5s;
+}
+
+.item-thumb{
+    position: relative;
+}
+
+#products .items .item .item-thumb .item-pic{
+    margin:0px 10%;
+    height: 200px;
+    width: 200px;
+}
+
+.item-pic:hover{
+    transform: scale(1.1,1.1);
+   -webkit-transform: scale(1.1,1.1);
+   -moz-transform: scale(1.1,1.1);
+   -o-transform: scale(1.1,1.1);
+   -ms-transform: scale(1.1,1.1);
+   transition: 1s;
+}
+
+#products .items .item .item-title {
+    font-size: 25px;
+    margin: 0px;
+}
+
+#products .items .item .item-price {
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+#content #products {
+    width:1200px;
+    margin: auto;
+    z-index: 1;
+    background-color: white;
+    position: relative;
+    border-radius: 30px;
+    height: auto;
+}
+
+#content #pagination {
+    display: flex;
+	justify-content: center;
+    height: 40px;
+    margin-top: 5px;
+    float: left;
+}
+
+#paging {
+    height: 30px;
+    margin: 20px auto;
+    position: relative;
+    width: 1200px;
+}
+
+.pagination{
+    float: left;
+    margin-left: 20px;
+    position: relative;
+    left: 47%;
+}
+
+.pagination .pagenumber a{
+	display: block;
+	height: 25px;
+	width: 25px;
+	background-color: #ff0000;
+	text-decoration: none;
+	text-align: center;
+	line-height: 25px;
+	color: #fff;
+	margin: 0px 10px;
+}
+
+.pagination .pagenumber a:hover{
+	background-color: #fff;
+	color: #ff0000;
+}
+
+#products .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    width: 1200px;
+    margin:0 auto;
+}
+
+#products .items .item {
+    padding:15px;
+}
+
+#products .items .item:hover {
+    box-shadow: rgba(0, 0, 0, 0.521) 0px 0px 10px ;
+    transition: .5s;
+}
+
+#products .items .item .item-thumb .item-pic{
+    margin:0px 10%;
+    height: 200px;
+    width: 200px;
+}
+
+#products .items .item .item-title {
+    font-size: 25px;
+    margin: 0px;
+}
+
+#products .items .item .item-price {
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+#products .items .item button.add-to-cart1 {
+    background-color: rgb(255, 0, 0);
+    border-radius:5px;
+    height: 35px;
+    width: 45%;
+    color: white;
+    outline: none;
+}
+
+#products .items .item button.add-to-cart2 {
+    background-color: rgb(255, 0, 0);
+    border-radius:5px;
+    height: 35px;
+    width: 45%;
+    color: white;
+    float: right;
+    outline: none;
+} 
+
+/*MODAL*/
+.modal {
+    display: none;
+    position: fixed;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.6);
+    margin: 0px;
+    padding: 100px 0px;
+    z-index: 10000;
+    left:0;
+    top:0;
+    overflow: auto;
+}
+
+#login {
+    width:350px;
+    height:auto;
+    text-align: center;
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-size: 18px;
+    margin: 100px auto;
+}
+
+.close {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    flex-direction: row;
+    justify-content: flex-end;
+    float: right;
+    margin: 0px 10px 0px -30px;
+}
+  
+.close:hover, 
+.close:focus {
+    color:red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#login .logolog, .logoregis {
+    height:100px;
+    width:100px;
+    margin-top: -50px;
+}
+
+#login .loginposition, .registerposition{
+    text-align: left;
+    width:85%;
+    margin:0 7.5%;
+    font-size: 23px;
+}
+
+#login input {
+    border:none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+input.search-text, input[type=email] {
+    color: black;
+}
+
+#login h1 {
+    color:rgb(0, 0, 0);
+    margin: 5px auto;
+}
+
+#login .loginposition button.logbtn {
+    width:85%;
+    margin-left:8%;
+    margin-right: 8%;
+}
+
+#login .registerposition button.regbtn {
+    width:50%;
+    margin-left:25%;
+    margin-right: 25%;
+    margin-top: 12px;
+}
+
+#login button.logbtn {
+    height: 35px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 18px;
+}
+
+#login .loginposition .logbtn button.logbtn:hover {
+    background-color: rgb(206, 0, 0);
+}
+
+#login .registerposition .regbtn button.regbtn:hover {
+    background-color: rgb(206, 0, 0);
+}
+
+.loginfooter, .registerfooter  {
+    font-size: 15px;
+    text-align: left;
+    width:65%;
+    margin:10px 7.5%;
+    color: rgb(99,95,95);
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+a {
+    color: rgb(99, 95, 95);
+    text-decoration: none;
+}
+
+#register {
+    width:550px;
+    height:auto;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-size: 18px;
+    margin: 100px auto;
+}
+
+#register h1 {
+    margin: 5px 0px;
+    color: rgb(0, 0, 0)
+}
+
+#register .registerposition .registerpositionleft {
+    width:48%;
+    float: left;
+}
+
+#register .registerposition .registerpositionright {
+    width: 48%;
+    float: right;
+}
+
+#register .registerposition button.regbtn {
+    width: 85%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#register .registerposition button.regbtn {
+    height: 35px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    font-size: 18px;
+}
+
+#register input {
+    border:none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+#wusername, #wupassword, #wname, #wnumber, #waddress, #wusernamenew, #wpassword, #wcpassword {
+    display: none;
+    font-size: 15px;
+    padding-left:3px;
+    padding-bottom: 5px;
+    color: red;
+}
+
+/*ADMIN*/
+section div.menubar {
+    height: 790px;
+    width:15%;
+    float: left;
+    background-color: rgb(139, 139, 139);
+}
+
+section div#broad {
+    height: 790px;
+    width:85%;
+    float:right;
+    background-color: #cfcfcf;
+}
+
+section#adminpage div.menubar ul {
+    margin-top: 100px;
+}
+
+section#adminpage div.menubar ul li {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+section#adminpage div.menubar ul li:hover {
+    box-shadow: #535353 1px 1px 10px;
+    cursor: pointer;
+}
+
+section#adminpage div.menubar ul li span {
+    float: left;
+    margin-left: 20px;
+}
+
+section#adminpage div.menubar ul li span.arrow {
+    float: right;
+    margin-right: 20px;
+}
+
+section#adminpage div.menubar img {
+    height: 90px;
+    width:150px;
+    margin: 10px 35px;
+}
+
+section#adminpage div.menubar p {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+section#adminpage div.menubar ul li span.out {
+    text-align: center;
+    margin:10px 17%;
+    color: white;
+    background-color: #ff0000;
+    width:150px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+}
+
+/*ANIMATION*/
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+  
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+@media screen and (max-width:600px) {
+    div#top {
+        display: none;
+    }
+
+    div#bot.sticky,
+    div#bot {
+        padding: 0px;
+    }
+    
+    div#bot .botnav .botnavleft {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    div#bot .botnav .botnavright {
+        margin: 0 auto;
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    div#bot .botnav .botnavright ul li.brand {
+        display: none;
+    }
+
+    div#bot .botnav .botnavright ul li.search {
+       margin-left: auto;
+       cursor: pointer;
+    }
+
+    div#bot .botnav .botnavleft .logo .pic {
+        width: 50px;
+        height: 30px;
+    }
+
+    section#banner .bannerinfo {
+        margin-top: 80px;
+    }
+
+    div#bot .botnav .botnavright ul li i {
+        margin: 0 10px;
+    }
+
+    div#bot .botnav .botnavright ul li.search div.searchbox input[type=search] {
+        height: 25px;
+        margin-top: -25px;
+        width:200px;
+        margin-left: -200px;
+    }
+
+    div#bot .botnav .botnavright ul li.search div.searchbox button[type=submit] {
+        height: 25px;
+        width: 25px;
+        margin-top: -25px;
+        margin-left: -25px;
+    }
+
+    div#bot .botnav .botnavright ul li.menures,
+    div#bot .botnav .botnavright ul li.menures:hover ul.pd {
+        display: block;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:900px) {
+    div#top {
+        display: none;
+    }
+
+    div#bot.sticky,
+    div#bot {
+        padding: 0 30px;
+    }
+
+    div#bot .botnav .botnavleft {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    div#bot .botnav .botnavright {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    section#banner .bannerinfo {
+        margin-top: 100px;
+    }
+
+    div#bot .botnav .botnavright ul li.search div.searchbox input[type=search] {
+        height: 25px;
+        margin-top: -25px;
+        width:380px;
+        margin-left: -380px;
+    }
+
+    div#bot .botnav .botnavright ul li.search div.searchbox button[type=submit] {
+        height: 25px;
+        width: 25px;
+        margin-top: -25px;
+        margin-left: -25px;
+    }
+}
+
+@media screen and (min-width:901px) and (max-width:1100px){
+    div#top {
+        display: none;
+    }
+
+    div#bot.sticky,
+    div#bot {
+        padding: 0 30px;
+    }
+
+    section#banner .bannerinfo {
+        margin-top: 50px;
+    }
+    
+
+    div#bot .botnav .botnavright ul li.search div.searchbox input[type=search] {
+        width: 380px;
+        margin-left: -380px;
+    }
+}
+
+@media screen and (min-width:1101px) and (max-width:1300px) {
+    div#top {
+        display: none;
+    }
+
+    div#bot.sticky,
+    div#bot {
+        padding: 0 30px;
+    }
+
+    section#banner .bannerinfo {
+        margin-top: 50px;
+    }
+
+    section#intro div.temp1 {
+        height: 200px;
+    }
+
+    section#intro div.temp1,
+    section#intro div.temp2 {
+        float: none;
+        background-color: white;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    section#intro div.temp1 .temp11,
+    section#intro div.temp1 .temp12,
+    section#intro div.temp1 .temp13 {
+        text-align: center;
+        width:100%;
+        margin: 0;
+        transition: .6s;
+    }
+
+    section#intro div.temp2 span.slide {
+        margin: auto;
+    }
+}
+
+/*FOOTER*/
+#foot {
+    width: 100%;
+    height: auto;
+    margin-top: 300px;
+    background-color: black;
+    position: relative;
+}
+
+#foot .footer {
+    max-width: 1200px;
+    height: 480px;
+    background-color: black;
+    color:rgb(255, 255, 255);
+    margin: auto;
+    transition: .6s;
+}
+
+#foot .footer p.footerinfo {
+    margin: 10px 0;
+} 
+
+#foot .footer .footer_info {
+    width: 90%;
+    margin: 0 5%;
+    height: 70%;
+}
+
+#foot .footer .footer_info h3 {
+    margin-top: 30px;
+}
+
+#foot .footer .footer_info .footer_info_1 {
+    width:33%;
+    float: left;
+}
+
+#foot .footer .footer_info .footer_info_1 .logo_footer {
+    margin-top: 20px;
+    height: 100px;
+    width: 180px;
+}
+
+#foot .footer .footer_info .footer_info_1 .email_footer {
+    height: 18px;
+    width: 25px;
+}
+
+#foot .footer .footer_info .footer_info_1 .call_footer {
+    height: 20px;
+    width: 23px;
+}
+
+#foot .footer .footer_info .footer_info_1 p.footerinfo {
+    color: white;
+}
+
+#foot .footer .footer_info .footer_info_1 p.contactinfo{
+    color: rgb(99, 95, 95);
+}
+
+#foot .footer .footer_info .footer_info_1 h3 {
+    margin-bottom: -5px;
+}
+
+#foot .footer .footer_info .footer_info_2 {
+    width: 25%;
+    float: left;
+}
+
+#foot .footer .footer_info .footer_info_3 {
+    width: 22%;
+    float: left;
+}
+
+#foot .footer .footer_info .footer_info_4 {
+    width: 20%;
+    float: left;
+}
+
+#foot .footer .footer_info .footer_info_4 input[type=email] {
+    background-color: white;
+    height: 30px;
+    margin-top: 10px;
+    outline: none;
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+#foot .footer .footer_info .footer_info_4 button.email {
+    margin-top: 10px;
+    background-color: red;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#foot .footer .footer_info .footer_info_4 button.email:hover {
+    background-color: rgb(206,0 , 0);
+}
+
+#foot .footer .footersocial {
+    text-align: center; 
+    margin-top:30px;
+}
+
+#foot .footer .footersocial .social {
+    height: 50px;
+    width: 50px;
+    margin: 0px 7px 0px 7px;
+}
+
+#foot .footer .footersocial .Istore {
+    margin-top: 10px;
+    color: white; 
+    font-size: 20px;
+}
+
+.iconthemgiohag1{
+    width:auto;
+    display: none;
+    height: auto;
+    cursor:pointer;
+    top:20px;
+    color: rgba(0, 0, 0, 0.523);
+    background-color: rgba(255, 255, 255, 0.884);
+    position:absolute;
+    right:44%;
+    font-size:25px;
+    animation-name: example1;
+    animation-duration: 1.4s;
+    padding: 5px;
+}
+
+@keyframes example1 {
+    0% {top:0px;}
+    100% {top:20px;}
+}
+
+.iconthemgiohag1:hover{
+     top:15px;
+     transition: 0.5s;
+}
+
+.iconthemgiohag2{
+    text-align: center;
+    width:35px;
+    display: none;
+    height:auto;
+    cursor:pointer;
+    top:73px;
+    right:44%;
+    position:absolute;
+    font-size: 25px;
+    animation-name: example2;
+    animation-duration: 1.3s;
+    padding: 5px;
+    margin: 0 auto   ;
+    color: rgba(0, 0, 0, 0.523);
+    background-color: rgba(255, 255, 255, 0.884);
+}
+
+.iconthemgiohag2:hover{
+    top:69px;
+    transition: 0.8s;
+}
+
+@keyframes example2 {
+    0% {right:20px;}
+    100% {right:44%;}
+}
+
+.iconthemgiohag3{
+    text-align: center;
+    display: none;
+    width:35px;
+    height:auto;
+    cursor:pointer;
+    bottom: 40px;
+    position:absolute;
+    right:44%;
+    color: rgba(0, 0, 0, 0.523);
+    background-color: rgba(255, 255, 255, 0.884);
+    font-size:25px;
+    animation-name: example3;
+    animation-duration: 1.3s;
+    padding: 5px;
+}
+
+.iconthemgiohag3:hover{
+    bottom: 43px;
+    transition: 0.5s;
+}
+
+@keyframes example3 {
+    0% {bottom:0px;}
+    100% {bottom: 40px;}
+}
+
+.themgiohang{
+    width: 100%;
+    height: 200px;
+    top: 0px;
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.551);
+    display: none;
+}
+
+section#cartinfo {
+    height:350px;
+    width:1200px;
+    border: solid 2px rgb(202, 202, 202);
+    margin:150px auto;
+    border-radius: 20px;
+}
+
+section#cartinfo h1 {
+    font-size: 40px;
+    color: rgb(133, 133, 133);
+    text-align: center;
+    line-height: 350px;
+}
+
+section#cartList {
+    width:800px;
+    border: solid 2px;
+    height: 200px;
+    margin-top: 180px;
+    margin-left:180px;
+}
+
+
+.test {
+    width:100%;
+    height: 100%;
+    position: fixed;
+}
+
+.productss {
+    position: fixed;
+    overflow: auto;
+    width:100%;
+    height: 100%;
+}
+
+#admintest {
+    width:100%;
+    height: 100px;
+    background-color: #b4b4b4;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 100px;
+    padding-left: 30px;
+    animation-name: animation;
+    animation-duration: 1s;
+}
