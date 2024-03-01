@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashbroad</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/jpg" href="Images/Icons/LogoIcon.ico">
+        <link rel="stylesheet" href="Style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body onload="loadWelcome()">
+        <section id="adminpage">
+            <div class="menubar">
+                <a href="Admin.html"><img src="Images/Icons/logo.jpg"></a>
+                <p>Dashbroad</p>
+                <ul>
+                    <li onclick="showManageProduct()">
+                        <span>Manage product</span>
+                        <span class="arrow">&#62;</span>
+                    </li>
+                    <li onclick="showManageAdmin()">
+                        <span>Admin</span>
+                        <span class="arrow">&#62;</span>
+                    </li>
+                    <li onclick="showCustomerList()">
+                        <span>Customer</span>
+                        <span class="arrow">&#62;</span>
+                    </li>
+                    <li onclick="showOrderList()">
+                        <span>Order List</span>
+                        <span class="arrow">&#62;</span>
+                    </li>
+                    <li>
+                        <span>Manage Bill</span>
+                        <span class="arrow">&#62;</span>
+                    </li>   
+                    <li onclick="backMainpage()">
+                        <span>Main page</span>
+                        <span class="arrow">&#62;</span>
+                    </li>
+                    <li onclick="logout()" style="margin-top: 40px;">
+                        <span class="out">Logout</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="broad">
+                <div id="admintest"></div>
+                <div class="test"></div>
+            </div>  
+        </section>
+    </body>
+    <script src="javascripts.js">
+    </script>
+</html>
